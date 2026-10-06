@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LSC Mechaniks</title>
+<style>
+:root{color-scheme:light dark}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0b0d10;color:#f4f5f6}
+#app{min-height:100vh;background:linear-gradient(145deg,#0b0d10 0%,#11161b 55%,#0d0f12 100%);color:#f4f5f6}
+header{position:sticky;top:0;z-index:5;background:rgba(11,13,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid #293038}
+nav{max-width:1100px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:1.5px;font-size:20px}.logo span{color:#ff6b00}
+nav a{color:#cbd0d5;text-decoration:none;margin-left:22px;font-size:14px}nav a:hover{color:#ff8a33}
+.hero{max-width:1100px;margin:auto;padding:85px 22px 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;border:1px solid #39424b;border-radius:999px;padding:7px 12px;color:#ff9a52;font-size:12px;font-weight:700}
+h1{font-size:clamp(48px,8vw,82px);line-height:.92;margin:18px 0}.hero h1 span{color:#ff6b00}
+.lead{color:#b7bec5;font-size:18px;line-height:1.6;max-width:650px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:10px;padding:13px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.primary{background:#ff6b00;color:white}.secondary{background:#20262c;color:#f4f5f6;border:1px solid #343d46}
+.card{background:#151a1f;border:1px solid #303840;border-radius:18px;padding:28px;box-shadow:0 20px 60px #0005}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:18px;border-radius:14px;background:#1b2127}.stat b{font-size:25px;display:block}.stat small{color:#9da6ae}
+section{max-width:1100px;margin:auto;padding:60px 22px}.section-title{font-size:34px;margin:0 0 24px}.muted{color:#9da6ae}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.service{background:#151a1f;border:1px solid #303840;border-radius:16px;padding:24px}.icon{font-size:30px}.service h3{margin:14px 0 8px}.service p{color:#9da6ae;line-height:1.5}
+.booking{display:grid;grid-template-columns:1fr 1fr;gap:24px}.booking form{display:grid;gap:12px}.booking input,.booking select,.booking textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #38414a;background:#0f1317;color:#f4f5f6;font:inherit}.booking textarea{min-height:110px;resize:vertical}
+.notice{padding:13px 15px;border-radius:10px;background:#17231c;border:1px solid #31533d;color:#bfe6ca;display:none}
+footer{border-top:1px solid #293038;padding:28px 22px;color:#89929a;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:60px}.services,.booking{grid-template-columns:1fr}nav a{margin-left:10px}.hide-mobile{display:none}}
+</style>
+</head>
+<body>
+<div id="app">
+<header><nav><div class="logo">LSC <span>MECHANIKS</span></div><div><a href="#szolgaltatasok">Szolgáltatások</a><a href="#foglalas">Időpont</a><a class="hide-mobile" href="#kapcsolat">Kapcsolat</a></div></nav></header>
+<main>
+<section class="hero">
+<div><div class="badge">🔧 AUTÓSZERVIZ • DIAGNOSZTIKA • RP</div><h1>LSC<br><span>MECHANIKS</span></h1><p class="lead">Megbízható szerelés, korrekt ügyintézés és egy kis műhelyhangulat. Válaszd ki, mire van szükséged, és foglalj időpontot egyszerűen.</p><div class="buttons"><a class="btn primary" href="#foglalas">📅 Időpontfoglalás</a><a class="btn secondary" href="#szolgaltatasok">Szolgáltatások</a></div></div>
+<div class="card"><div class="stats"><div class="stat"><b>24/7</b><small>Online foglalás</small></div><div class="stat"><b>⚙️</b><small>Szakszerű munka</small></div><div class="stat"><b>🚗</b><small>Autóközpontú</small></div><div class="stat"><b>💬</b><small>Gyors egyeztetés</small></div></div></div>
+</section>
+<section id="szolgaltatasok"><h2 class="section-title">Szolgáltatások</h2><p class="muted">A leggyakoribb munkák egy helyen.</p><div class="services">
+<div class="service"><div class="icon">🔧</div><h3>Általános szerviz</h3><p>Olajcsere, szűrők, fékek és alap karbantartások.</p></div>
+<div class="service"><div class="icon">🖥️</div><h3>Diagnosztika</h3><p>Hibakódok kiolvasása és a problémák célzott feltárása.</p></div>
+<div class="service"><div class="icon">🛞</div><h3>Futómű & fék</h3><p>Futómű- és fékrendszer ellenőrzés, javítás és beállítás.</p></div>
+</div></section>
+<section id="foglalas"><div class="booking"><div><h2 class="section-title">Foglalj időpontot</h2><p class="muted">Töltsd ki az adatokat. A gomb egy előre kitöltött üzenetet készít, amit elküldhetsz az LSC Mechaniksnak.</p></div>
+<div class="card"><form id="form"><input id="name" placeholder="Név" required><input id="car" placeholder="Autó (pl. Audi A4 B5)" required><select id="service"><option>Általános szerviz</option><option>Diagnosztika</option><option>Futómű & fék</option><option>Egyéb</option></select><input id="date" type="date" required><input id="time" type="time" required><textarea id="note" placeholder="Megjegyzés (opcionális)"></textarea><button class="btn primary" type="submit">📩 Foglalási kérelem elkészítése</button><div id="ok" class="notice">A foglalási üzenet elkészült. Ellenőrizd, majd küldd el.</div></form></div></div></section>
+<section id="kapcsolat"><h2 class="section-title">Kapcsolat</h2><p class="muted">LSC Mechaniks • Szerelőtelep</p><div class="buttons"><a class="btn secondary" href="#foglalas">📅 Időpontot kérek</a><a class="btn secondary" href="https://discord.com" target="_blank" rel="noopener">💬 Discord</a></div></section>
+</main>
+<footer>© 2026 LSC Mechaniks • Minden jog fenntartva</footer>
+</div>
+<script>
+document.getElementById('form').addEventListener('submit',function(e){
+e.preventDefault();
+const n=document.getElementById('name').value,c=document.getElementById('car').value,s=document.getElementById('service').value,d=document.getElementById('date').value,t=document.getElementById('time').value,m=document.getElementById('note').value;
+const msg=`LSC Mechaniks időpontkérés%0A%0ANév: ${encodeURIComponent(n)}%0AAutó: ${encodeURIComponent(c)}%0ASzolgáltatás: ${encodeURIComponent(s)}%0ADátum: ${encodeURIComponent(d)}%0AIdőpont: ${encodeURIComponent(t)}%0AMegjegyzés: ${encodeURIComponent(m||'-')}`;
+window.location.href='mailto:?subject=LSC%20Mechaniks%20időpontkérés&body='+msg;
+document.getElementById('ok').style.display='block';
+});
+</script>
+</body></html>
